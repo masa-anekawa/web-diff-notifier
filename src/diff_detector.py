@@ -1,6 +1,3 @@
-from lxml import etree
-
-
 class DiffDetector:
     def __init__(self, xpaths):
         self.xpaths = xpaths
@@ -20,12 +17,11 @@ class DiffDetector:
                     diff = self._get_diff(current_elements, previous_elements)
                     diffs.setdefault(url, {})[xpath] = diff
 
-            self.previous_data[url] = {
-                xpath: soup.select(xpath) for xpath in self.xpaths}
+            self.previous_data[url] = {xpath: soup.select(xpath) for xpath in self.xpaths}
 
         return diffs
 
     def _get_diff(self, current_elements, previous_elements):
         # Implement diff logic here
         # Return the diff as a string
-        pass
+        return ""

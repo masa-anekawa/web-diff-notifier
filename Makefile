@@ -1,4 +1,4 @@
-.PHONY: install build clean
+.PHONY: install build clean test coverage lint format
 
 install:
 	poetry install
@@ -15,3 +15,19 @@ clean:
 	rm -rf .mypy_cache
 	rm -rf .pytest_cache
 	rm -rf .hypothesis
+
+test:
+	poetry run pytest tests/unit
+
+coverage:
+	poetry run pytest --cov=src --cov-report=term-missing tests/unit
+
+lint:
+	poetry run pylint src tests
+	poetry run flake8 src tests
+
+format:
+	poetry run black src tests
+	poetry run isort src tests
+
+ci: format lint test coverage

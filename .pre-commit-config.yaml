@@ -26,6 +26,8 @@ repos:
           - flake8-bugbear
           - flake8-comprehensions
           - flake8-simplify
+        args:
+          - --max-line-length=120
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.2.0
@@ -33,9 +35,13 @@ repos:
       - id: mypy
         additional_dependencies: [types-requests, types-beautifulsoup4]
 
-  - repo: https://github.com/PyCQA/pylint
-    rev: v2.17.2
+  - repo: local
     hooks:
       - id: pylint
+        name: pylint
+        entry: poetry run pylint
+        language: system
+        types: [python]
         args:
           - --rcfile=pyproject.toml
+          - --fail-under=9.0

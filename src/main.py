@@ -1,7 +1,7 @@
-from scraper import Scraper
-from diff_detector import DiffDetector
-from notifier import Notifier
-from config import SCRAPING_URLS, DIFF_XPATHS, NOTIFICATION_URL, NOTIFICATION_STRINGS
+from src.config import DIFF_XPATHS, NOTIFICATION_STRINGS, NOTIFICATION_URL, SCRAPING_URLS
+from src.diff_detector import DiffDetector
+from src.notifier import Notifier
+from src.scraper import Scraper
 
 
 def main():

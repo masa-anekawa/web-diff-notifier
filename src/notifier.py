@@ -18,4 +18,4 @@ class Notifier:
             "xpath": xpath,
             "diff": diff,
         }
-        requests.post(self.url, json=payload)
+        requests.post(self.url, json=payload, timeout=10)

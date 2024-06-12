@@ -9,7 +9,7 @@ class Scraper:
     def scrape(self):
         scraped_data = {}
         for url in self.urls:
-            response = requests.get(url)
+            response = requests.get(url, timeout=10)
             soup = BeautifulSoup(response.text, "lxml")
             scraped_data[url] = soup
         return scraped_data

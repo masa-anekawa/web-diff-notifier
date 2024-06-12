@@ -1,4 +1,5 @@
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
+
 from src.notifier import Notifier
 
 
@@ -13,8 +14,7 @@ def test_init():
 
 @patch("requests.post")
 def test_notify(mock_post):
-    notifier = Notifier("https://api.example.com/notify",
-                        ["important", "urgent"])
+    notifier = Notifier("https://api.example.com/notify", ["important", "urgent"])
     diffs = {
         "https://example.com": {
             "/html/body/h1": "New important content",

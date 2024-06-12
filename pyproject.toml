@@ -14,7 +14,6 @@ lxml = "^4.9.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.2.2"
-black = "^23.3.0"
 flake8 = "^6.0.0"
 mypy = "^1.2.0"
 coverage = "^7.2.3"
@@ -30,7 +29,7 @@ addopts = "--cov=src --cov-report=term-missing"
 
 [tool.black]
 line-length = 120
-target-version = ['py312']
+target-version = ['py311']
 
 [tool.isort]
 profile = "black"
@@ -41,6 +40,7 @@ disable = [
     "missing-module-docstring",
     "missing-class-docstring",
     "missing-function-docstring",
+    "too-few-public-methods",
 ]
 
 [build-system]

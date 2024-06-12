@@ -1,5 +1,8 @@
-import pytest
 from unittest.mock import MagicMock, patch
+
+import pytest
+from bs4 import BeautifulSoup
+
 from src.scraper import Scraper
 
 
@@ -22,5 +25,5 @@ def test_scrape(mock_get, scraper):
     scraped_data = scraper.scrape()
 
     assert len(scraped_data) == 2
-    assert all(isinstance(soup, MagicMock) for soup in scraped_data.values())
+    assert all(isinstance(soup, BeautifulSoup) for soup in scraped_data.values())
     mock_get.assert_called()
