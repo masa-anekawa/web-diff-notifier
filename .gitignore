@@ -6,7 +6,7 @@ __pycache__/
 
 # Python environment
 .Python
-env/
+.venv/
 
 # Build and distribution directories
 build/
