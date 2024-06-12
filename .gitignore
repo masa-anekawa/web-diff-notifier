@@ -1,0 +1,54 @@
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Python environment
+.Python
+env/
+
+# Build and distribution directories
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Manifest and specification files
+*.manifest
+*.spec
+
+# Log files
+pip-log.txt
+pip-delete-this-directory.txt
+*.log
+
+# Coverage and test reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+
+# Internationalization files
+*.mo
+*.pot
+
+# Version control and IDE files
+.git/
+.mypy_cache/
+.pytest_cache/
+.hypothesis/
